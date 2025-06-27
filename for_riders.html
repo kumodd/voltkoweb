@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Riders – Earn More with Voltko</title>
+    
+    <!-- Chosen Palette: Voltko Green Harmony -->
+    <!-- Application Structure Plan: The page is designed as a landing page for gig workers. It starts with a strong value proposition in the hero section. It then logically flows into the key benefits: 'Financial Gains' with an interactive calculator, 'Worry-Free Charging' to build trust in the infrastructure, and 'Future-Proofing' their career. It concludes with a clear call-to-action via an onboarding form. This structure is designed to persuade and convert riders by addressing their primary concerns. -->
+    <!-- Visualization & Content Choices: 
+        - Savings Calculator: Goal: Personalize/Convince -> Method: Interactive JS calculator + Chart.js Bar Chart -> Interaction: User-controlled slider -> Justification: Allows riders to see their potential savings, making the benefit tangible. Library: Chart.js.
+        - Core Promises (3km, Zero Wait): Goal: Build Trust -> Method: Icon-based feature cards -> Justification: Clearly and visually communicates key infrastructure promises.
+        - Onboarding Form: Goal: Lead Generation -> Method: HTML form with JS mailto handler -> Interaction: User input -> Justification: Provides a simple way for interested riders to connect.
+        -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .page-header-section {
+            position: relative;
+            color: white;
+            background: url('https://placehold.co/1920x700/166534/ffffff?text=Rider+with+EV') no-repeat center center/cover;
+        }
+        
+        .page-header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 66, 50, 0.75); /* Dark Green overlay */
+            z-index: 1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 40vh;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, #16a34a, #15803d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-700">Voltko</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#about" class="text-gray-600 hover:text-green-700 transition">Our Mission</a>
+                <a href="index.html#features" class="text-gray-600 hover:text-green-700 transition">Why Voltko</a>
+                <a href="index.html#how-it-works" class="text-gray-600 hover:text-green-700 transition">How It Works</a>
+                <a href="careers.html" class="text-gray-600 hover:text-green-700 transition">Careers</a>
+                <a href="blog.html" class="text-gray-600 hover:text-green-700 transition">Blog</a>
+
+            </nav>
+            <a href="#" class="download-app-btn bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition hidden md:inline-block">Download App</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white">
+            <a href="index.html#about" class="block py-2 text-gray-600 hover:text-green-700">Our Mission</a>
+            <a href="index.html#features" class="block py-2 text-gray-600 hover:text-green-700">Why Voltko</a>
+            <a href="index.html#how-it-works" class="block py-2 text-gray-600 hover:text-green-700">How It Works</a>
+            <a href="careers.html" class="block py-2 text-gray-600 hover:text-green-700">Careers</a>
+            <a href="blog.html" class="block py-2 text-gray-600 hover:text-green-700">Blog</a>
+            <a href="" class="download-app-btn block mt-2 text-center bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition">Download App</a>
+        </div>
+    </header>
+    <main>
+        <!-- Page Header Section -->
+        <section class="page-header-section flex items-center justify-center pt-32 pb-20">
+            <div class="page-header-content container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Stop Burning Money on Petrol.</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">Switch to EV and join the Voltko network to maximize your earnings, eliminate fuel costs, and ride worry-free with our reliable charging infrastructure.</p>
+            </div>
+        </section>
+
+        <!-- Financial Benefits Section -->
+        <section id="benefits" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Increase Your Daily Earnings</h2>
+                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">See how switching to an EV with Voltko directly impacts your pocket.</p>
+                </div>
+               
+                <div class="grid md:grid-cols-5 gap-8 items-center bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-semibold text-gray-900">Monthly Savings Calculator</h3>
+                        <p class="mt-2 text-gray-600 mb-6">Drag the slider to match your daily travel and see your potential savings compared to petrol.</p>
+                        
+                        <div>
+                            <label for="km-slider" class="font-semibold text-gray-800">Daily Kilometers Driven: <span id="km-value" class="text-green-600 font-bold">100 km</span></label>
+                            <input id="km-slider" type="range" min="30" max="200" value="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mt-2">
+                        </div>
+
+                        <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                            <p class="text-lg font-medium text-gray-800">Your Estimated Monthly Savings:</p>
+                            <p id="savings-value" class="text-4xl font-extrabold text-green-600">₹4,000+</p>
+                        </div>
+                         <p class="mt-4 text-sm text-gray-500">Plus, save up to 40% on maintenance costs annually. That's more money in your pocket, every single month.</p>
+                    </div>
+                    <div class="md:col-span-3">
+                        <div class="chart-container">
+                            <canvas id="savingsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Worry-Free Charging Section -->
+        <section id="charging" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Never Worry About Charging Again</h2>
+                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">Voltko's network is built for riders like you. We keep you on the road, earning.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow">
+                        <i class="fas fa-map-marked-alt text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Charger within 3km</h3>
+                        <p class="text-gray-600">Our dense network means you're never far from a charging point. No more range anxiety, no more long detours.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow">
+                        <i class="fas fa-clock text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Zero Waiting Time</h3>
+                        <p class="text-gray-600">Our stations have multiple chargers, so you can power up and get back on the road instantly. More trips, more money.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow">
+                        <i class="fas fa-qrcode text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Scan, Charge, Pay</h3>
+                        <p class="text-gray-600">The process is simple and fast. Use the Voltko app to handle everything in seconds, so you can focus on your work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future-Proof Section -->
+        <section id="future" class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <i class="fas fa-leaf text-5xl text-green-500 mb-4"></i>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Future is Electric. Secure Your Earnings.</h2>
+                <p class="text-lg text-gray-600 mx-auto mt-4">Governments are already planning to phase out petrol bikes in major cities to fight pollution. The shift to EV is not a matter of 'if', but 'when'. By joining the Voltko network now, you are not just saving money today—you are future-proofing your livelihood for tomorrow.</p>
+                <p class="text-lg text-gray-600 mx-auto mt-4">Ride cleaner, breathe healthier air, and be a part of the sustainable future of transport in India.</p>
+            </div>
+        </section>
+
+        <!-- Onboarding Form Section -->
+        <section id="join" class="py-20 bg-green-700 text-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">Join the Voltko Rider Community</h2>
+                    <p class="text-lg text-green-100 max-w-2xl mx-auto mt-4">Ready to boost your earnings and ride worry-free? Fill out the form below to get started. We'll get in touch with you.</p>
+                </div>
+                <form id="rider-form" class="mt-10 bg-white text-gray-800 p-8 rounded-lg shadow-2xl space-y-6 max-w-2xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="rider_name" class="block text-sm font-medium">Full Name</label>
+                            <input type="text" id="rider_name" name="Rider_Name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="rider_phone" class="block text-sm font-medium">Phone Number</label>
+                            <input type="tel" id="rider_phone" name="Phone_Number" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="rider_city" class="block text-sm font-medium">Your City</label>
+                        <input type="text" id="rider_city" name="City" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">What is your current vehicle status?</label>
+                        <div class="mt-2 space-y-2">
+                            <div class="flex items-center">
+                                <input id="status_own" name="Vehicle_Status" type="radio" value="I own an EV" required class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300">
+                                <label for="status_own" class="ml-3 block text-sm font-medium">I already own an EV</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="status_plan" name="Vehicle_Status" type="radio" value="I plan to buy an EV soon" class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300">
+                                <label for="status_plan" class="ml-3 block text-sm font-medium">I plan to buy an EV soon</label>
+                            </div>
+                             <div class="flex items-center">
+                                <input id="status_petrol" name="Vehicle_Status" type="radio" value="I currently ride a petrol bike" class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300">
+                                <label for="status_petrol" class="ml-3 block text-sm font-medium">I currently ride a petrol bike</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <button type="submit" class="w-full md:w-auto submit-button cursor-pointer bg-green-600 text-white font-bold py-3 px-10 rounded-lg hover:bg-green-700 transition-all transform hover:scale-105">Submit Information</button>
+                    </div>
+                    <div id="form-message" class="text-center hidden pt-4"></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-1">
+                    <h3 class="text-2xl font-bold mb-4 text-green-500">Voltko</h3>
+                    <p class="text-gray-400">Driving a sustainable future with smart, accessible EV charging solutions.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Press</a></li>
+                        <li><a href="careers.html" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                <!-- Solutions -->
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="for-riders.html" class="text-gray-400 hover:text-white transition">For Riders</a></li>
+                        <li><a href="index.html#use-cases" class="text-gray-400 hover:text-white transition">For Fleets</a></li>
+                        <li><a href="index.html#use-cases" class="text-gray-400 hover:text-white transition">For Businesses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2025 Voltko Technologies Pvt. Ltd. All Rights Reserved.</p>
+                <div class="space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Savings Calculator and Chart
+            const slider = document.getElementById('km-slider');
+            const kmValue = document.getElementById('km-value');
+            const savingsValue = document.getElementById('savings-value');
+            const ctx = document.getElementById('savingsChart')?.getContext('2d');
+            
+            if(ctx && slider) {
+                const petrolCostPerKm = 2.1; // Approx. ₹105/L at 50kmpl
+                const evCostPerKm = 0.3; // Approx. cost
+
+                let savingsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Petrol Cost', 'EV Cost'],
+                        datasets: [{
+                            label: 'Estimated Monthly Cost (₹)',
+                            data: [0, 0],
+                            backgroundColor: ['rgba(239, 68, 68, 0.6)', 'rgba(22, 163, 74, 0.6)'],
+                            borderColor: ['rgba(239, 68, 68, 1)', 'rgba(22, 163, 74, 1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        plugins: { legend: { display: false } },
+                        scales: { x: { beginAtZero: true, title: { display: true, text: 'Estimated Monthly Cost (₹)' } } }
+                    }
+                });
+
+                function updateCalculator() {
+                    const dailyKm = parseInt(slider.value);
+                    kmValue.textContent = `${dailyKm} km`;
+                    const monthlyKm = dailyKm * 26;
+                    const petrolCost = monthlyKm * petrolCostPerKm;
+                    const evCost = monthlyKm * evCostPerKm;
+                    const savings = petrolCost - evCost;
+                    savingsValue.textContent = `₹${Math.round(savings).toLocaleString('en-IN')}`;
+                    savingsChart.data.datasets[0].data = [petrolCost, evCost];
+                    savingsChart.update();
+                }
+
+                slider.addEventListener('input', updateCalculator);
+                updateCalculator();
+            }
+
+            // Rider Onboarding Form
+            const riderForm = document.getElementById('rider-form');
+            if (riderForm) {
+                riderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const messageDiv = document.getElementById('form-message');
+                    let isValid = true;
+                    riderForm.querySelectorAll('[required]').forEach(input => {
+                        if ((input.type === 'radio' && !riderForm.querySelector(`input[name="${input.name}"]:checked`)) || (!input.value && input.type !== 'radio')) {
+                            isValid = false;
+                        }
+                    });
+
+                    if (!isValid) {
+                        messageDiv.textContent = 'Please fill out all required fields.';
+                        messageDiv.className = 'text-center pt-4 text-red-300';
+                        return;
+                    }
+
+                    const formData = new FormData(riderForm);
+                    let body = "New Rider Onboarding Request:\n\n";
+                    for (const [key, value] of formData.entries()) {
+                        body += `${key.replace(/_/g, ' ')}: ${value}\n`;
+                    }
+                    
+                    const mailtoLink = `mailto:kumod353@gmail.com?subject=${encodeURIComponent('New Voltko Rider Inquiry')}&body=${encodeURIComponent(body)}`;
+                    window.location.href = mailtoLink;
+
+                    messageDiv.textContent = "Thank you! Your information has been prepared. Please review and send it from your email client.";
+                    messageDiv.className = 'text-center pt-4 text-green-200';
+                    riderForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

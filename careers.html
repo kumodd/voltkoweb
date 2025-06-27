@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Voltko – Join Our Mission</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* Page Header background styling */
+        .page-header-section {
+            position: relative;
+            color: white;
+            background: url('https://placehold.co/1920x600/16a34a/ffffff?text=Join+Voltko') no-repeat center center/cover;
+        }
+        
+        .page-header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 66, 50, 0.75); /* Dark Green overlay */
+            z-index: 1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .accordion-button .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button.open .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+       <!-- Header -->
+       <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-700">Voltko</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#about" class="text-gray-600 hover:text-green-700 transition">Our Mission</a>
+                <a href="index.html#features" class="text-gray-600 hover:text-green-700 transition">Why Voltko</a>
+                <a href="index.html#how-it-works" class="text-gray-600 hover:text-green-700 transition">How It Works</a>
+                <a href="careers.html" class="text-gray-600 hover:text-green-700 transition">Careers</a>
+                <a href="blog.html" class="text-gray-600 hover:text-green-700 transition">Blog</a>
+
+            </nav>
+            <a href="#" class="download-app-btn bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition hidden md:inline-block">Download App</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white">
+            <a href="index.html#about" class="block py-2 text-gray-600 hover:text-green-700">Our Mission</a>
+            <a href="index.html#features" class="block py-2 text-gray-600 hover:text-green-700">Why Voltko</a>
+            <a href="index.html#how-it-works" class="block py-2 text-gray-600 hover:text-green-700">How It Works</a>
+            <a href="careers.html" class="block py-2 text-gray-600 hover:text-green-700">Careers</a>
+            <a href="blog.html" class="block py-2 text-gray-600 hover:text-green-700">Blog</a>
+            <a href="" class="download-app-btn block mt-2 text-center bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition">Download App</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header Section -->
+        <section class="page-header-section flex items-center justify-center pt-32 pb-20">
+            <div class="page-header-content container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Join Our Mission</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">We're looking for passionate individuals to help us build the future of urban mobility in India. Find your place at Voltko.</p>
+            </div>
+        </section>
+
+        <!-- Open Positions Section -->
+        <section id="positions" class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-gray-900">Current Openings</h2>
+
+                <!-- Job Accordion -->
+                <div class="space-y-4">
+                    <!-- Job 1: Software Developer -->
+                    <div class="job-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-xl font-semibold text-gray-800">Software Developer (Flutter & Spring Boot)</span>
+                            <i class="accordion-icon fas fa-chevron-down text-green-600"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="px-6 pb-6 pt-2">
+                                <p class="text-gray-500 mb-4">Location: Remote / Bangalore</p>
+                                <p class="text-gray-600 mb-6">You will be the architect of our digital platform, building robust, scalable, and user-friendly applications that form the backbone of the Voltko experience for millions of users.</p>
+                                <h4 class="font-semibold mb-2">Responsibilities:</h4>
+                                <ul class="list-disc list-inside text-gray-600 mb-6">
+                                    <li>Develop and maintain our cross-platform mobile app using Flutter.</li>
+                                    <li>Design and manage our backend services and APIs with Spring Boot.</li>
+                                    <li>Collaborate with product and design teams to create seamless user experiences.</li>
+                                    <li>Ensure the performance, quality, and responsiveness of applications.</li>
+                                </ul>
+                                <form class="application-form space-y-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="name1" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                            <input type="text" id="name1" name="Name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="email1" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                            <input type="email" id="email1" name="Email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="phone1" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                            <input type="tel" id="phone1" name="Phone" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="linkedin1" class="block text-sm font-medium text-gray-700">LinkedIn Profile URL</label>
+                                            <input type="url" id="linkedin1" name="LinkedIn_Profile" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="resume_link1" class="block text-sm font-medium text-gray-700">Online Resume Link (Google Drive, etc.)</label>
+                                        <input type="url" id="resume_link1" name="Resume_Link" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                    </div>
+                                    <div class="form-message hidden p-4 rounded-md"></div>
+                                    <button type="submit" class="submit-button cursor-pointer bg-green-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-green-700 transition inline-block">Apply Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 2: Digital Marketing Manager -->
+                    <div class="job-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-xl font-semibold text-gray-800">Digital Marketing Manager</span>
+                            <i class="accordion-icon fas fa-chevron-down text-green-600"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="px-6 pb-6 pt-2">
+                                <p class="text-gray-500 mb-4">Location: Remote / Mumbai</p>
+                                <p class="text-gray-600 mb-6">You will be the voice of Voltko, driving our growth by creating compelling campaigns that resonate with our diverse audiences and accelerate app downloads and user engagement.</p>
+                                <h4 class="font-semibold mb-2">Responsibilities:</h4>
+                                <ul class="list-disc list-inside text-gray-600 mb-6">
+                                    <li>Develop and execute digital marketing strategies across all channels (SEO, SEM, Social Media, Email).</li>
+                                    <li>Manage user acquisition campaigns to drive app installs and sign-ups.</li>
+                                    <li>Create and curate engaging content for our blog and social media platforms.</li>
+                                    <li>Analyze campaign performance and optimize for ROI.</li>
+                                </ul>
+                                <form class="application-form space-y-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="name2" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                            <input type="text" id="name2" name="Name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="email2" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                            <input type="email" id="email2" name="Email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="phone2" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                            <input type="tel" id="phone2" name="Phone" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="linkedin2" class="block text-sm font-medium text-gray-700">LinkedIn Profile URL</label>
+                                            <input type="url" id="linkedin2" name="LinkedIn_Profile" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="resume_link2" class="block text-sm font-medium text-gray-700">Online Resume Link (Google Drive, etc.)</label>
+                                        <input type="url" id="resume_link2" name="Resume_Link" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                    </div>
+                                    <div class="form-message hidden p-4 rounded-md"></div>
+                                    <button type="submit" class="submit-button cursor-pointer bg-green-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-green-700 transition inline-block">Apply Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 3: Field Operations Manager -->
+                    <div class="job-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-xl font-semibold text-gray-800">Field Operations Manager</span>
+                            <i class="accordion-icon fas fa-chevron-down text-green-600"></i>
+                        </button>
+                        <div class="accordion-content">
+                             <div class="px-6 pb-6 pt-2">
+                                <p class="text-gray-500 mb-4">Location: Delhi / NCR</p>
+                                <p class="text-gray-600 mb-6">You will be the hands-on leader ensuring our charging network is reliable, efficient, and expanding. You'll manage station onboarding, maintenance, and our on-ground support teams.</p>
+                                <h4 class="font-semibold mb-2">Responsibilities:</h4>
+                                <ul class="list-disc list-inside text-gray-600 mb-6">
+                                    <li>Oversee the installation and commissioning of new charging stations.</li>
+                                    <li>Manage relationships with charging station owners and partners.</li>
+                                    <li>Lead a team of field technicians to ensure network uptime and quick issue resolution.</li>
+                                    <li>Optimize operational processes for maximum efficiency and customer satisfaction.</li>
+                                </ul>
+                                <form class="application-form space-y-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="name3" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                            <input type="text" id="name3" name="Name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="email3" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                            <input type="email" id="email3" name="Email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="phone3" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                            <input type="tel" id="phone3" name="Phone" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                        <div>
+                                            <label for="linkedin3" class="block text-sm font-medium text-gray-700">LinkedIn Profile URL</label>
+                                            <input type="url" id="linkedin3" name="LinkedIn_Profile" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="resume_link3" class="block text-sm font-medium text-gray-700">Online Resume Link (Google Drive, etc.)</label>
+                                        <input type="url" id="resume_link3" name="Resume_Link" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                                    </div>
+                                    <div class="form-message hidden p-4 rounded-md"></div>
+                                    <button type="submit" class="submit-button cursor-pointer bg-green-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-green-700 transition inline-block">Apply Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cofounder/Partner Section -->
+        <section id="partner" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <div class="bg-white p-10 rounded-xl shadow-lg">
+                    <i class="fas fa-handshake text-5xl text-green-600 mb-4"></i>
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900">Looking for Co-founders & Strategic Partners</h2>
+                    <p class="text-gray-600 text-lg mb-6">Are you a visionary with a passion for EVs, technology, or sustainable business? We believe great companies are built by exceptional teams. If you have expertise in technology, finance, or operations and want to build something truly impactful from the ground up, we want to talk to you.</p>
+                    
+                    <form class="application-form space-y-4 text-left mt-8">
+                        <input type="hidden" name="Inquiry_Type" value="Co-founder / Partner">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name_partner" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                <input type="text" id="name_partner" name="Name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            <div>
+                                <label for="email_partner" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" id="email_partner" name="Email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="linkedin_partner" class="block text-sm font-medium text-gray-700">LinkedIn Profile URL</label>
+                            <input type="url" id="linkedin_partner" name="LinkedIn_Profile" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="message_partner" class="block text-sm font-medium text-gray-700">Brief Introduction / Message</label>
+                            <textarea id="message_partner" name="Message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500" placeholder="Tell us about yourself and your interest in Voltko..."></textarea>
+                        </div>
+                        <div class="form-message hidden p-4 rounded-md"></div>
+                        <div class="text-center">
+                            <button type="submit" class="submit-button cursor-pointer bg-green-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-800 transition inline-block text-lg">Let's Connect</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-1">
+                    <h3 class="text-2xl font-bold mb-4 text-green-500">Voltko</h3>
+                    <p class="text-gray-400">Driving a sustainable future with smart, accessible EV charging solutions.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="index.html#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Press</a></li>
+                        <li><a href="careers.html" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                <!-- Solutions -->
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#use-cases" class="text-gray-400 hover:text-white transition">For Riders</a></li>
+                        <li><a href="index.html#use-cases" class="text-gray-400 hover:text-white transition">For Fleets</a></li>
+                        <li><a href="index.html#use-cases" class="text-gray-400 hover:text-white transition">For Businesses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2025 Voltko Technologies Pvt. Ltd. All Rights Reserved.</p>
+                <div class="space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const isOpen = button.classList.contains('open');
+
+                // Close all other accordions
+                document.querySelectorAll('.accordion-button').forEach(btn => {
+                    if (btn !== button) {
+                        btn.classList.remove('open');
+                        btn.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current accordion
+                button.classList.toggle('open', !isOpen);
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+
+        // Form Submission Handling
+        document.querySelectorAll('.application-form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const messageDiv = form.querySelector('.form-message');
+                const submitButton = form.querySelector('.submit-button');
+
+                // Basic validation
+                let isValid = true;
+                form.querySelectorAll('[required]').forEach(input => {
+                    if (!input.value) {
+                        isValid = false;
+                        input.classList.add('border-red-500');
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                });
+
+                if (!isValid) {
+                    messageDiv.textContent = 'Please fill out all required fields.';
+                    messageDiv.className = 'form-message p-4 rounded-md bg-red-100 text-red-700 block';
+                    return;
+                }
+                
+                // Construct mailto link
+                const formData = new FormData(form);
+                
+                const jobTitleSpan = form.closest('.job-item')?.querySelector('.accordion-button span');
+                const inquiryTypeInput = form.querySelector('input[name="Inquiry_Type"]');
+                let subject;
+                let body = "";
+
+                if (jobTitleSpan) {
+                    subject = `Job Application: ${jobTitleSpan.textContent.trim()}`;
+                } else if (inquiryTypeInput) {
+                    subject = `${inquiryTypeInput.value} Inquiry`;
+                } else {
+                    subject = 'Voltko Careers Inquiry';
+                }
+
+                for (const [key, value] of formData.entries()) {
+                    body += `${key.replace(/_/g, ' ')}: ${value}\n\n`;
+                }
+                
+                const mailtoLink = `mailto:kumod353@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Update UI to give feedback
+                messageDiv.textContent = "Your application has been prepared. Please review and send it from your email client.";
+                messageDiv.className = 'form-message p-4 rounded-md bg-green-100 text-green-800 block';
+                
+                // Optionally reset the form after a delay
+                setTimeout(() => {
+                    form.reset();
+                }, 2000);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post: Electric Highways & Silent Streets: Inside India’s EV Surge</title>
+    
+    <!-- Chosen Palette: Voltko Green Harmony -->
+    <!-- Application Structure Plan: The page is structured as a traditional, long-form blog article to enhance readability and narrative flow. It uses a single-column layout for the main text. An interactive card section is integrated to dynamically illustrate the key drivers of the EV surge. -->
+    <!-- Visualization & Content Choices: 
+        - Key Drivers: Goal: Inform/Visualize -> Method: Interactive HTML/CSS cards -> Interaction: Hover to reveal details -> Justification: Provides a clean, engaging way to showcase the primary factors fueling the market growth.
+        - Key Concepts: Goal: Organize/Inform -> Method: Standard text sections with bolded key points and pull-quotes -> Justification: Aligns with a standard, readable article format.
+        -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, #16a34a, #15803d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .prose-lg h2 {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            font-weight: 700;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+        }
+        .prose-lg p {
+            line-height: 1.75;
+            margin-bottom: 1.25em;
+        }
+        
+        .info-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Back to Blog Button -->
+            <div class="mb-8">
+                <a href="blog.html" class="inline-flex items-center gap-2 text-green-700 font-semibold hover:text-green-800 transition-colors">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to All Posts
+                </a>
+            </div>
+
+            <!-- Header Section -->
+            <header class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+                    Electric Highways & Silent Streets: Inside India’s <span class="text-gradient">EV Surge</span>
+                </h1>
+                <p class="mt-4 text-gray-500">Published on June 5, 2025 by Team Voltko</p>
+            </header>
+
+            <article class="prose prose-lg max-w-none text-gray-800">
+                <p class="lead text-xl">
+                    Something remarkable is happening on India's roads. The once-dominant noise of internal combustion engines is gradually being punctuated by the near-silent glide of electric vehicles. This isn't a fringe movement anymore; it's a full-blown surge. From bustling city centers to the highways connecting them, India is in the midst of a powerful and irreversible shift towards electric mobility.
+                </p>
+                
+                <h2>A Perfect Storm of Growth</h2>
+                <p>
+                    The rapid adoption of EVs in India isn't happening by accident. It's the result of a "perfect storm"—a convergence of critical factors that are collectively pushing the accelerator on the transition. This surge is powered by a combination of government vision, market economics, and a fundamental shift in consumer mindset.
+                </p>
+
+                <div class="my-12 bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-gray-900 text-center">The Key Drivers of India's EV Market</h3>
+                    <p class="mt-2 text-gray-600 mb-8 text-center">Several powerful forces are working in tandem to fuel the nation's transition to electric.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Card 1: Policy Push -->
+                        <div class="info-card text-center p-6 bg-green-50 rounded-lg">
+                            <i class="fas fa-landmark text-4xl text-green-600 mb-3"></i>
+                            <h4 class="font-bold text-lg">Strong Policy Push</h4>
+                            <p class="text-sm text-gray-600 mt-1">Government schemes like FAME-II and state-level subsidies are making EVs more affordable and attractive to buyers.</p>
+                        </div>
+                        <!-- Card 2: Economic Sense -->
+                        <div class="info-card text-center p-6 bg-blue-50 rounded-lg">
+                            <i class="fas fa-rupee-sign text-4xl text-blue-600 mb-3"></i>
+                            <h4 class="font-bold text-lg">Compelling Economics</h4>
+                            <p class="text-sm text-gray-600 mt-1">With soaring petrol prices, the significantly lower running cost of an EV offers huge savings for high-mileage users.</p>
+                        </div>
+                        <!-- Card 3: Consumer Awareness -->
+                        <div class="info-card text-center p-6 bg-yellow-50 rounded-lg">
+                            <i class="fas fa-lightbulb text-4xl text-yellow-600 mb-3"></i>
+                            <h4 class="font-bold text-lg">Rising Awareness</h4>
+                            <p class="text-sm text-gray-600 mt-1">Growing concern for urban air pollution and climate change is motivating consumers to choose cleaner transport options.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Beyond the City Limits</h2>
+                <p>
+                    While the initial wave of EV adoption was concentrated in major metropolitan areas, the surge is now expanding. The development of fast-charging corridors along major national highways is giving EV owners the confidence to undertake inter-city travel. This is a critical step in moving EVs from being perceived as "city cars" to viable vehicles for all purposes.
+                </p>
+                <p>
+                    Imagine highways where the loudest sound is the wind, not the engines. Picture rest stops that are not just for refreshments, but for rapid "power-ups." This vision is quickly becoming a reality, creating a network of "electric highways" that will connect the country in a cleaner, more sustainable way.
+                </p>
+
+                <h2>The Voltko Effect: Powering the Surge with Confidence</h2>
+                <p>
+                    This nationwide surge can only be sustained if the charging experience is seamless, reliable, and ubiquitous. A driver's confidence in their EV is directly tied to their confidence in the charging network. This is the foundational principle behind <span class="font-bold text-green-700">Voltko</span>.
+                </p>
+                <p>
+                    We are building the critical infrastructure that allows this surge to continue unabated. By installing multi-charger stations in cities, on highways, and at destinations, we ensure that drivers have access to power wherever their journey takes them. Our focus on a <span class="font-bold">zero waiting time</span> model and a simple, app-based <span class="font-bold">Scan, Charge, Pay</span> system removes the friction from the charging process, making the EV ownership experience superior to its petrol counterpart.
+                </p>
+                <p>
+                    The silent streets and electric highways of tomorrow are being built today. The EV surge is more than a trend; it's the beginning of a new era in Indian transportation. At Voltko, we are committed to providing the power and the confidence to keep this incredible momentum moving forward.
+                </p>
+            </article>
+
+        </div>
+    </div>
+
+</body>
+</html>

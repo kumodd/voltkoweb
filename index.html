@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltko – Powering India's Green Commute</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .hero-section {
+            position: relative;
+            color: white;
+            background: url('https://placehold.co/1920x1080/114232/ffffff?text=Electric+Auto+Charging') no-repeat center center/cover;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(17, 66, 50, 0.8), rgba(17, 66, 50, 0.6)); /* Green overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .feature-card, .testimonial-card, .use-case-card, .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover, .testimonial-card:hover, .use-case-card:hover, .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-700">Voltko</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-green-700 transition">Our Mission</a>
+                <a href="#features" class="text-gray-600 hover:text-green-700 transition">Why Voltko</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-green-700 transition">How It Works</a>
+                <a href="careers.html" class="text-gray-600 hover:text-green-700 transition">Careers</a>
+                <a href="blog.html" class="text-gray-600 hover:text-green-700 transition">Blog</a>
+              
+            </nav>
+            <a href="#" class="download-app-btn bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition hidden md:inline-block">Download App</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-green-700">Our Mission</a>
+            <a href="#features" class="block py-2 text-gray-600 hover:text-green-700">Why Voltko</a>
+            <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-green-700">How It Works</a>
+            <a href="careers.html" class="block py-2 text-gray-600 hover:text-green-700">Careers</a>
+            <a href="blog.html" class="block py-2 text-gray-600 hover:text-green-700">Blog</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-green-700">Contact</a>
+            <a href="#" class="download-app-btn block mt-2 text-center bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition">Download App</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section min-h-screen flex items-center pt-20">
+            <div class="hero-content container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Powering India's Green Commute</h1>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Your EV Charge is a Tap Away.</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-200">Join the revolution. Find, book, and pay for 2W/3W EV charging across India with the Voltko app.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="" class="download-app-btn bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg flex items-center hover:bg-gray-200 transition transform hover:scale-105 w-full sm:w-auto justify-center">
+                        <i class="fab fa-google-play mr-3 text-2xl text-green-600"></i>
+                        <div>
+                            <span class="text-xs">GET IT ON</span><br>
+                            <span class="text-lg">Google Play</span>
+                        </div>
+                    </a>
+                    <a href="" class="download-app-btn bg-white text-gray-800 font-semibold py-3 px-6 rounded-lg flex items-center hover:bg-gray-200 transition transform hover:scale-105 w-full sm:w-auto justify-center">
+                        <i class="fab fa-apple mr-3 text-2xl text-green-600"></i>
+                        <div>
+                            <span class="text-xs">Download on the</span><br>
+                            <span class="text-lg">App Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who We Are Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Mission: A Cleaner India, One Charge at a Time</h2>
+                        <p class="text-gray-600 mb-4">Voltko is dedicated to building a robust and accessible EV charging ecosystem for India's booming 2 and 3-wheeler segment. We aim to reduce urban pollution and support the nation's ambitious green energy goals.</p>
+                        <p class="text-gray-600">By making EV charging simple, affordable, and reliable, we empower individuals and businesses to confidently switch to electric, creating healthier cities and a sustainable future for all.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x400/27ae60/ffffff?text=Sustainable+Future" alt="Voltko's Green Mission" class="rounded-xl shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Voltko? Section -->
+        <section id="features" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="fade-in-up text-3xl md:text-4xl font-bold mb-2">The Voltko Advantage</h2>
+                <p class="fade-in-up text-gray-600 max-w-2xl mx-auto mb-12">Experience seamless charging with features designed for the Indian EV driver.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                        <div class="text-green-600 text-4xl mb-4"><i class="fas fa-network-wired"></i></div>
+                        <h3 class="font-semibold text-lg mb-2">Vast & Reliable Network</h3>
+                        <p class="text-gray-600 text-sm">With a station within a 3km radius, you can ride with peace of mind. Our network is safe and always growing.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                        <div class="text-green-600 text-4xl mb-4"><i class="fas fa-clock"></i></div>
+                        <h3 class="font-semibold text-lg mb-2">Zero Waiting Time</h3>
+                        <p class="text-gray-600 text-sm">Get back on the road instantly. Our stations have 6 chargers each, eliminating queues.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                        <div class="text-green-600 text-4xl mb-4"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="font-semibold text-lg mb-2">Ultimate Simplicity</h3>
+                        <p class="text-gray-600 text-sm">The entire process is three words: Scan, Charge, Pay. All within one user-friendly app.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                        <div class="text-green-600 text-4xl mb-4"><i class="fas fa-calendar-check"></i></div>
+                        <h3 class="font-semibold text-lg mb-2">Plan Ahead</h3>
+                        <p class="text-gray-600 text-sm">Reserve charging slots in advance to fit your schedule perfectly.</p>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                        <div class="text-green-600 text-4xl mb-4"><i class="fas fa-map-location-dot"></i></div>
+                        <h3 class="font-semibold text-lg mb-2">Stay Informed</h3>
+                        <p class="text-gray-600 text-sm">Track your charge and view station availability in real-time.</p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="feature-card bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                        <div class="text-green-600 text-4xl mb-4"><i class="fas fa-wallet"></i></div>
+                        <h3 class="font-semibold text-lg mb-2">Effortless Payments</h3>
+                        <p class="text-gray-600 text-sm">Use our secure in-app wallet for cashless, hassle-free transactions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Use Cases Section -->
+        <section id="use-cases" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="fade-in-up text-3xl md:text-4xl font-bold text-center mb-12">Empowering Every EV User</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Use Case 1 -->
+                    <div class="use-case-card bg-gray-50 p-8 rounded-xl shadow-sm text-center">
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-user-alt"></i></div>
+                        <h3 class="font-bold text-xl mb-2">Daily Commuters</h3>
+                        <p class="text-gray-600">Easily charge your scooter near home or work. Say goodbye to range anxiety.</p>
+                    </div>
+                    <!-- Use Case 2 -->
+                    <div class="use-case-card bg-gray-50 p-8 rounded-xl shadow-sm text-center">
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-boxes-packing"></i></div>
+                        <h3 class="font-bold text-xl mb-2">Fleet Managers</h3>
+                        <p class="text-gray-600">Optimize routes and minimize downtime for your entire delivery fleet.</p>
+                    </div>
+                    <!-- Use Case 3 -->
+                    <div class="use-case-card bg-gray-50 p-8 rounded-xl shadow-sm text-center">
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-store"></i></div>
+                        <h3 class="font-bold text-xl mb-2">Business Owners</h3>
+                        <p class="text-gray-600">Attract EV customers and earn revenue by hosting a Voltko charger.</p>
+                    </div>
+                    <!-- Use Case 4 -->
+                    <div class="use-case-card bg-gray-50 p-8 rounded-xl shadow-sm text-center">
+                        <div class="text-blue-500 text-5xl mb-4"><i class="fas fa-motorcycle"></i></div>
+                        <h3 class="font-bold text-xl mb-2">Gig Economy Pros</h3>
+                        <p class="text-gray-600">Auto and delivery drivers: Spend less time charging and more time earning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="fade-in-up text-3xl md:text-4xl font-bold text-center mb-12">Scan, Charge, Pay. It's That Easy.</h2>
+                <div class="grid md:grid-cols-3 gap-12 text-center relative">
+                    <!-- Dotted line for desktop -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5" style="top: 60px;">
+                        <svg width="100%" height="2">
+                            <line x1="0" y1="1" x2="100%" y2="1" stroke="#d1d5db" stroke-width="2" stroke-dasharray="8 8"/>
+                        </svg>
+                    </div>
+                    <!-- Step 1 -->
+                    <div class="relative z-10 fade-in-up">
+                        <div class="bg-green-600 text-white w-24 h-24 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 shadow-lg"><i class="fas fa-search-location"></i></div>
+                        <h3 class="font-bold text-xl mb-2">1. Locate</h3>
+                        <p class="text-gray-600">Use the app to find an available charging station near you.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative z-10 fade-in-up" style="transition-delay: 200ms;">
+                        <div class="bg-green-600 text-white w-24 h-24 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 shadow-lg"><i class="fas fa-qrcode"></i></div>
+                        <h3 class="font-bold text-xl mb-2">2. Scan & Charge</h3>
+                        <p class="text-gray-600">Scan the QR code at the station to begin your charging session.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative z-10 fade-in-up" style="transition-delay: 400ms;">
+                        <div class="bg-green-600 text-white w-24 h-24 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 shadow-lg"><i class="fas fa-rupee-sign"></i></div>
+                        <h3 class="font-bold text-xl mb-2">3. Pay Digitally</h3>
+                        <p class="text-gray-600">Complete the payment seamlessly through the secure Voltko wallet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Environmental Impact Section -->
+        <section class="py-20 bg-green-700 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="fade-in-up text-3xl md:text-4xl font-bold mb-4">Driving a Positive Change</h2>
+                <p class="fade-in-up max-w-3xl mx-auto mb-12">Each charge on our network is a step towards cleaner air and a healthier planet. See our collective impact.</p>
+                <div class="grid sm:grid-cols-3 gap-8">
+                    <div class="fade-in-up">
+                        <div class="text-5xl font-extrabold">50,000+</div>
+                        <div class="text-lg mt-2">Tonnes of CO2 Emissions Prevented</div>
+                    </div>
+                    <div class="fade-in-up" style="transition-delay: 200ms;">
+                        <div class="text-5xl font-extrabold">25M+</div>
+                        <div class="text-lg mt-2">Green Kilometers Powered</div>
+                    </div>
+                    <div class="fade-in-up" style="transition-delay: 400ms;">
+                        <div class="text-5xl font-extrabold">100k+</div>
+                        <div class="text-lg mt-2">Trees Worth of Carbon Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="fade-in-up text-3xl md:text-4xl font-bold text-center mb-12">Voices from Our Community</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-sm">
+                        <p class="text-gray-600 mb-6">"Voltko is a lifesaver. As a delivery executive in Mumbai, finding a quick charge used to be a big headache. Now, I just check the app, find a nearby station, and I'm good to go. More deliveries, more earnings!"</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/50x50/3498db/ffffff?text=R" alt="Rohan" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">Rohan Mehra</p>
+                                <p class="text-sm text-gray-500">Logistics Partner, Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-sm">
+                        <p class="text-gray-600 mb-6">"My family switched to an electric auto last year. Voltko's network in Delhi is fantastic. The stations are always working, and the app makes it so easy to pay. It’s cheaper and cleaner than petrol."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/50x50/2ecc71/ffffff?text=S" alt="Sunita" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">Sunita Yadav</p>
+                                <p class="text-sm text-gray-500">Auto Driver, Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-sm">
+                        <p class="text-gray-600 mb-6">"I love my electric scooter for getting around Pune. With Voltko, I never worry about running out of charge. The app is super simple, and it feels good to know I'm helping the environment."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/50x50/e74c3c/ffffff?text=P" alt="Priya" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">Priya Kulkarni</p>
+                                <p class="text-sm text-gray-500">College Student, Pune</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog/Insights Section -->
+        <section id="blog" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="fade-in-up text-3xl md:text-4xl font-bold text-center mb-12">EV Insights & News</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="https://placehold.co/600x400/a9dfbf/ffffff?text=Urban+EVs" alt="Urban EVs" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-green-600 font-semibold mb-2">URBAN MOBILITY</p>
+                            <h3 class="font-bold text-lg mb-3">Why 2W & 3W EVs Are the Future of Urban India</h3>
+                            <a href="#" class="font-semibold text-gray-600 hover:text-green-700">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="https://placehold.co/600x400/a2d9ce/ffffff?text=Smart+Charging" alt="Smart Charging" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-green-600 font-semibold mb-2">INNOVATION</p>
+                            <h3 class="font-bold text-lg mb-3">From Petrol Pumps to Smart Chargers: The Voltko Revolution</h3>
+                            <a href="#" class="font-semibold text-gray-600 hover:text-green-700">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="https://placehold.co/600x400/abebc6/ffffff?text=Save+The+Planet" alt="Sustainability" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-green-600 font-semibold mb-2">SUSTAINABILITY</p>
+                            <h3 class="font-bold text-lg mb-3">How Every Charge with Voltko Helps Save the Planet</h3>
+                            <a href="#" class="font-semibold text-gray-600 hover:text-green-700">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta" class="bg-green-600 text-white">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Join India's Green Mobility Wave</h2>
+                <p class="max-w-2xl mx-auto mb-8">Download the Voltko app for the easiest way to find, book, and pay for EV charging.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="" class="download-app-btn bg-white text-green-600 font-semibold py-3 px-6 rounded-lg flex items-center hover:bg-gray-200 transition transform hover:scale-105 w-full sm:w-auto justify-center">
+                        <i class="fab fa-google-play mr-3 text-2xl"></i>
+                        <div>
+                            <span class="text-xs">GET IT ON</span><br>
+                            <span class="text-lg">Google Play</span>
+                        </div>
+                    </a>
+                    <a href="" class="download-app-btn bg-white text-green-600 font-semibold py-3 px-6 rounded-lg flex items-center hover:bg-gray-200 transition transform hover:scale-105 w-full sm:w-auto justify-center">
+                        <i class="fab fa-apple mr-3 text-2xl"></i>
+                        <div>
+                            <span class="text-xs">Download on the</span><br>
+                            <span class="text-lg">App Store</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Partner Logos -->
+        <section class="py-12 bg-gray-200">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-gray-600 text-sm font-semibold uppercase tracking-wider mb-6">Trusted by leading names in mobility and energy</h3>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                    <img src="https://placehold.co/120x40/cccccc/999999?text=Ather" alt="Partner Logo 1" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/cccccc/999999?text=Ola+Electric" alt="Partner Logo 2" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/cccccc/999999?text=Tata+Power" alt="Partner Logo 3" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/cccccc/999999?text=Zomato" alt="Partner Logo 4" class="h-8 opacity-70 hover:opacity-100 transition">
+                    <img src="https://placehold.co/120x40/cccccc/999999?text=Swiggy" alt="Partner Logo 5" class="h-8 opacity-70 hover:opacity-100 transition">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-1">
+                    <h3 class="text-2xl font-bold mb-4 text-green-500">Voltko</h3>
+                    <p class="text-gray-400">Driving a sustainable future with smart, accessible EV charging solutions.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about_us.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="careers.html" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                <!-- Solutions -->
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="for_riders.html" class="text-gray-400 hover:text-white transition">For Riders</a></li>
+                        <li><a href="for_fleets.html" class="text-gray-400 hover:text-white transition">For Fleets</a></li>
+                        <li><a href="for_bussiness.html" class="text-gray-400 hover:text-white transition">For Businesses</a></li>
+                        <li><a href="for_contact_sales.html" class="text-gray-400 hover:text-white transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2025 Voltko Technologies Pvt. Ltd. All Rights Reserved.</p>
+                <div class="space-x-4 mt-4 sm:mt-0">
+                    <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="term_and_services.html" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snackbar -->
+    <div id="snackbar" class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-4 z-[100] transition-all duration-500 ease-out opacity-0 translate-y-4">
+        <i class="fas fa-rocket"></i>
+        <span id="snackbar-message"></span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Intersection Observer for animations
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Snackbar functionality
+            const snackbar = document.getElementById('snackbar');
+            const snackbarMessage = document.getElementById('snackbar-message');
+            let snackbarTimeout;
+
+            function showSnackbar(message) {
+                if (!snackbar || !snackbarMessage) return;
+
+                clearTimeout(snackbarTimeout);
+
+                snackbarMessage.textContent = message;
+                snackbar.classList.remove('hidden', 'opacity-0', 'translate-y-4');
+                snackbar.classList.add('opacity-100', 'translate-y-0');
+
+                snackbarTimeout = setTimeout(() => {
+                    snackbar.classList.remove('opacity-100', 'translate-y-0');
+                    snackbar.classList.add('opacity-0', 'translate-y-4');
+                    setTimeout(() => snackbar.classList.add('hidden'), 500);
+                }, 3000);
+            }
+
+            // Add event listeners to download buttons
+            const downloadButtons = document.querySelectorAll('.download-app-btn');
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showSnackbar('App launching soon!');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

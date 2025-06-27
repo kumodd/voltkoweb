@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Fleets – Optimize Your EV Operations with Voltko</title>
+    
+    <!-- Chosen Palette: Voltko Green Harmony -->
+    <!-- Application Structure Plan: The page is designed as a B2B landing page for fleet managers. It opens with a strong value proposition focusing on cost and efficiency. It then details key benefits ('Centralized Control', 'Maximized Uptime', 'Reduced Costs') using clear icons. A visual mockup of a dashboard is included to make the 'control' aspect tangible. It concludes with a lead generation form tailored for business inquiries. -->
+    <!-- Visualization & Content Choices: 
+        - Key Benefits: Goal: Build Trust/Inform -> Method: Icon-based feature cards -> Justification: Clearly communicates the core value proposition for a business audience.
+        - Dashboard Mockup: Goal: Visualize/Convince -> Method: Styled HTML/CSS image placeholder -> Justification: Provides a concrete visual of the product's management capabilities.
+        - Onboarding Form: Goal: Lead Generation -> Method: HTML form with JS mailto handler -> Interaction: User input -> Justification: Captures business leads effectively.
+        -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .page-header-section {
+            position: relative;
+            color: white;
+            background: url('https://placehold.co/1920x700/14532d/ffffff?text=EV+Fleet+Management') no-repeat center center/cover;
+        }
+        
+        .page-header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 66, 50, 0.75); /* Dark Green overlay */
+            z-index: 1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, #16a34a, #15803d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+    </style>
+</head>
+<body class="text-gray-700">
+
+     <!-- Header -->
+     <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-700">Voltko</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#about" class="text-gray-600 hover:text-green-700 transition">Our Mission</a>
+                <a href="index.html#features" class="text-gray-600 hover:text-green-700 transition">Why Voltko</a>
+                <a href="index.html#how-it-works" class="text-gray-600 hover:text-green-700 transition">How It Works</a>
+                <a href="careers.html" class="text-gray-600 hover:text-green-700 transition">Careers</a>
+                <a href="blog.html" class="text-gray-600 hover:text-green-700 transition">Blog</a>
+             
+            </nav>
+            <a href="#" class="download-app-btn bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition hidden md:inline-block">Download App</a>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white">
+            <a href="index.html#about" class="block py-2 text-gray-600 hover:text-green-700">Our Mission</a>
+            <a href="index.html#features" class="block py-2 text-gray-600 hover:text-green-700">Why Voltko</a>
+            <a href="index.html#how-it-works" class="block py-2 text-gray-600 hover:text-green-700">How It Works</a>
+            <a href="careers.html" class="block py-2 text-gray-600 hover:text-green-700">Careers</a>
+            <a href="blog.html" class="block py-2 text-gray-600 hover:text-green-700">Blog</a>
+            <a href="#" class="download-app-btn block mt-2 text-center bg-green-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-green-700 transition">Download App</a>
+        </div>
+    </header>
+    <main>
+        <!-- Page Header Section -->
+        <section class="page-header-section flex items-center justify-center pt-32 pb-20">
+            <div class="page-header-content container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Power Your Fleet. Optimize Your Operations.</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">Voltko offers a comprehensive charging solution for last-mile delivery, logistics, and corporate fleets. Reduce costs and complexity with our smart charging network.</p>
+            </div>
+        </section>
+
+        <!-- Key Benefits Section -->
+        <section id="benefits" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800">A Smarter Way to Manage Your EV Fleet</h2>
+                     <p class="text-lg text-gray-600 max-w-2xl mx-auto mt-4">Our platform is designed to solve the unique challenges of commercial EV operations.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                        <i class="fas fa-tachometer-alt text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Centralized Dashboard</h3>
+                        <p class="text-gray-600">Monitor your entire fleet's charging status, usage, and payments from a single, intuitive interface. Get real-time data to make smarter decisions.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                        <i class="fas fa-battery-full text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Maximize Uptime</h3>
+                        <p class="text-gray-600">With our dense network and multi-charger stations, your vehicles spend more time on the road and less time searching for or waiting for a charge.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+                        <i class="fas fa-file-invoice-dollar text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Simplify Payments</h3>
+                        <p class="text-gray-600">Manage all charging expenses through a single corporate wallet. Get consolidated monthly invoices, eliminating the hassle of individual reimbursements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Preview Section -->
+        <section id="dashboard" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Total Control at Your Fingertips</h2>
+                        <p class="text-gray-600 mb-4">Our fleet management dashboard gives you a bird's-eye view of your entire operation. Track vehicle locations, monitor battery levels in real-time, analyze charging patterns, and manage your expenses with powerful reporting tools.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i>Live Vehicle & Battery Status</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i>Charging History & Analytics</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i>Expense Reporting & Invoicing</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-2xl">
+                        <img src="https://placehold.co/600x400/e2e8f0/475569?text=Fleet+Dashboard+UI" alt="Fleet Dashboard Mockup" class="rounded-md w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Onboarding Form Section -->
+        <section id="join" class="py-20 bg-green-700 text-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">Electrify Your Fleet with Voltko</h2>
+                    <p class="text-lg text-green-100 max-w-2xl mx-auto mt-4">Let's discuss how we can create a tailored charging solution for your business. Fill out the form below, and our fleet specialist will get in touch.</p>
+                </div>
+                <form id="fleet-form" class="mt-10 bg-white text-gray-800 p-8 rounded-lg shadow-2xl space-y-6 max-w-2xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="company_name" class="block text-sm font-medium">Company Name</label>
+                            <input type="text" id="company_name" name="Company_Name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="contact_name" class="block text-sm font-medium">Contact Person</label>
+                            <input type="text" id="contact_name" name="Contact_Person" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                    </div>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="contact_email" class="block text-sm font-medium">Work Email</label>
+                            <input type="email" id="contact_email" name="Work_Email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="contact_phone" class="block text-sm font-medium">Phone Number</label>
+                            <input type="tel" id="contact_phone" name="Phone_Number" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="fleet_size" class="block text-sm font-medium">Estimated Fleet Size</label>
+                        <select id="fleet_size" name="Fleet_Size" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            <option>1-10 vehicles</option>
+                            <option>11-50 vehicles</option>
+                            <option>51-200 vehicles</option>
+                            <option>200+ vehicles</option>
+                        </select>
+                    </div>
+                    <div class="text-center pt-4">
+                        <button type="submit" class="w-full md:w-auto submit-button cursor-pointer bg-green-600 text-white font-bold py-3 px-10 rounded-lg hover:bg-green-700 transition-all transform hover:scale-105">Request a Consultation</button>
+                    </div>
+                    <div id="form-message" class="text-center hidden pt-4"></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-1">
+                    <h3 class="text-2xl font-bold mb-4 text-green-500">Voltko</h3>
+                    <p class="text-gray-400">Driving a sustainable future with smart, accessible EV charging solutions.</p>
+                </div>
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Press</a></li>
+                        <li><a href="careers.html" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                <!-- Solutions -->
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="for-riders.html" class="text-gray-400 hover:text-white transition">For Riders</a></li>
+                        <li><a href="for-fleets.html" class="text-gray-400 hover:text-white transition">For Fleets</a></li>
+                        <li><a href="index.html#use-cases" class="text-gray-400 hover:text-white transition">For Businesses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Sales</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2025 Voltko Technologies Pvt. Ltd. All Rights Reserved.</p>
+                <div class="space-x-4 mt-4 sm:mt-0">
+                    <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="term_and_services.html" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Fleet Onboarding Form
+            const fleetForm = document.getElementById('fleet-form');
+            if (fleetForm) {
+                fleetForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const messageDiv = document.getElementById('form-message');
+                    let isValid = true;
+                    fleetForm.querySelectorAll('[required]').forEach(input => {
+                        if (!input.value) {
+                            isValid = false;
+                        }
+                    });
+
+                    if (!isValid) {
+                        messageDiv.textContent = 'Please fill out all required fields.';
+                        messageDiv.className = 'text-center pt-4 text-red-300';
+                        return;
+                    }
+
+                    const formData = new FormData(fleetForm);
+                    let body = "New Fleet Consultation Request:\n\n";
+                    for (const [key, value] of formData.entries()) {
+                        body += `${key.replace(/_/g, ' ')}: ${value}\n`;
+                    }
+                    
+                    const mailtoLink = `mailto:kumod353@gmail.com?subject=${encodeURIComponent('New Voltko Fleet Inquiry')}&body=${encodeURIComponent(body)}`;
+                    window.location.href = mailtoLink;
+
+                    messageDiv.textContent = "Thank you! Your information has been prepared. Please review and send it from your email client.";
+                    messageDiv.className = 'text-center pt-4 text-green-200';
+                    fleetForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
